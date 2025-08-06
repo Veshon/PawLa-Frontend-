@@ -5,12 +5,15 @@ import EditText from '../../components/ui/EditText';
 import Dropdown from '../../components/ui/Dropdown';
 import DatePicker2 from '@/components/common/DatePicker2.jsx';
 import DatePicker from '@/components/common/DatePicker.jsx';
+import PetSelection from '@/components/common/PetSelection.jsx';
+import PetSlider from '@/components/common/PetSlider.jsx';
 
 const HomePage = () => {
   const [selectedPetType, setSelectedPetType] = useState('');
   const [selectedService, setSelectedService] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showPetSelection, setShowPetSelection] = useState(false);
 
   const petTypes = [
     { label: 'Puppy (Under 6 months)', value: 'puppy' },
@@ -175,11 +178,23 @@ const HomePage = () => {
                     <img src="/images/img_vector_yellow_800_8x12.svg" alt="Dropdown" className="w-[12px] h-[8px]" />
                   </div>
                 </div>
-                
-                <div className="flex items-center">
-                  <img src="/images/img_vector_yellow_800_12x12.svg" alt="Add" className="w-[12px] h-[12px] mr-1" />
-                  <span className="text-[14px] font-inter font-medium text-[#e6a033] underline">add another pet</span>
-                </div>
+
+                <PetSelection></PetSelection>
+                {/*<button*/}
+                {/*  type="button"*/}
+                {/*  className="flex items-center bg-transparent border-none p-0 cursor-pointer hover:opacity-80 transition-opacity"*/}
+                {/*  onClick={() => setShowPetSelection(true)}*/}
+                {/*>*/}
+                {/*  <img*/}
+                {/*    src="/images/img_vector_yellow_800_12x12.svg"*/}
+                {/*    alt=""*/}
+                {/*    className="w-[12px] h-[12px] mr-1"*/}
+                {/*    aria-hidden="true"*/}
+                {/*  />*/}
+                {/*  <span className="text-[14px] font-inter font-medium text-[#e6a033] underline">*/}
+                {/*      add another pet*/}
+                {/*  </span>*/}
+                {/*</button>*/}
               </div>
 
               {/* Service Selection */}
@@ -269,6 +284,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
       {/* Lost Pets Section */}
       <section className="w-full py-12 sm:py-16 md:py-20">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -290,12 +306,13 @@ const HomePage = () => {
             </div>
 
             {/* Pet Cards */}
+{/*
             <div className="lg:w-3/4">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {lostPets?.map((pet) => (
                   <div key={pet?.id} className="border border-[#e6a033] rounded-[20px] overflow-hidden">
-                    <img 
-                      src={pet?.image} 
+                    <img
+                      src={pet?.image}
                       alt={pet?.name}
                       className="w-full h-[196px] object-cover rounded-t-[20px]"
                     />
@@ -317,6 +334,8 @@ const HomePage = () => {
                 ))}
               </div>
             </div>
+*/}
+          <PetSlider></PetSlider>
           </div>
         </div>
       </section>
