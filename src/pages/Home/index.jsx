@@ -482,12 +482,12 @@ const HomePage = () => {
         <img 
           src="/images/img_photo_illustrat.png" 
           alt="Pet illustration"
-          className="absolute left-0 bottom-0 w-[294px] h-[424px] rounded-[40px]"
+          className="absolute -left-5 bottom-0 w-[294px] h-[424px] rounded-[40px]"
         />
         <img 
           src="/images/img_cute_little_dog.png" 
           alt="Cute little dog"
-          className="absolute right-0 bottom-0 w-[284px] h-[424px] rounded-[40px]"
+          className="absolute -right-5 bottom-0 w-[284px] h-[424px] rounded-[40px]"
         />
         </div>
       </section>
@@ -536,8 +536,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
       {/* Footer */}
-      <footer className="w-full h-[500px] py-5 sm:py-16 relative bg-no-repeat"
+      <footer className="w-full h-[460px] py-5 sm:py-16 relative bg-no-repeat"
               style={{
                 backgroundImage: "url('/images/img_rectangle_11.png')",
                 backgroundSize: '100% auto',
@@ -546,7 +547,7 @@ const HomePage = () => {
         <div className="w-full pt-[100px] max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Footer Top */}
           <div className="text-center mb-8">
-            <img src="/images/img_group_458.svg" alt="Footer logo" className="w-[34px] h-[20px] mx-auto mb-8" />
+            <img src="/images/img_group_458.svg" alt="Footer logo" className="w-[34px] h-[20px] mx-auto mb-8 relative left-[120px]" />
           </div>
           
           <div className="flex flex-col lg:flex-row justify-between gap-8 mb-8">
@@ -565,11 +566,6 @@ const HomePage = () => {
                   SUBSCRIBE
                 </button>
               </div>
-              
-              <div className="flex gap-4 justify-center mt-6">
-                <img src="/images/img_vector_purple_800_24x24.svg" alt="Social" className="w-[24px] h-[24px]" />
-                <img src="/images/img_group_purple_800.svg" alt="Social" className="w-[24px] h-[24px]" />
-              </div>
             </div>
 
             {/* Links */}
@@ -579,6 +575,10 @@ const HomePage = () => {
                 <a href="#" className="block text-[12px] font-inter font-normal text-black">Register</a>
                 <a href="#" className="block text-[12px] font-inter font-normal text-black">Privacy Policy</a>
                 <a href="#" className="block text-[12px] font-inter font-normal text-black">Terms and Conditions</a>
+              </div>
+              <div className="flex gap-4 justify-center mt-6">
+                <img src="/images/img_vector_purple_800_24x24.svg" alt="Social" className="w-[24px] h-[24px]" />
+                <img src="/images/img_group_purple_800.svg" alt="Social" className="w-[24px] h-[24px]" />
               </div>
             </div>
 
@@ -594,7 +594,7 @@ const HomePage = () => {
           </div>
           
           <div className="text-center">
-            <img src="/images/img_group_427.svg" alt="Footer decoration" className="w-[34px] h-[20px] mx-auto mb-4" />
+            <img src="/images/img_group_427.svg" alt="Footer decoration" className="w-[34px] h-[20px] mx-auto mb-4 relative right-[130px]" />
           </div>
         </div>
         

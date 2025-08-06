@@ -112,6 +112,10 @@ const PetSlider = () => {
         }
       `}</style>*/}
       <style jsx global>{`
+        .swiper-pagination-bullet {
+          background: #FAECD9;
+          opacity: 1;
+        }
         .swiper-pagination-bullet-active {
             background: #E6A033 !important;
         }
