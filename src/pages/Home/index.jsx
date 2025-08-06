@@ -99,21 +99,32 @@ const HomePage = () => {
                   {/* Puppy */}
                   <button
                     type="button"
-                    className="flex items-center bg-[#e6a033] border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#d15735] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50"
+                    className="flex items-center bg-[white] border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50 group"
                     onClick={() => {
                       console.log('Puppy selected');
                     }}
                   >
                     <div className="flex flex-col mr-2">
-                      <span className="text-[14px] font-inter font-medium text-white">Puppy</span>
-                      <span className="text-[10px] font-inter font-medium text-white">Under 6 months</span>
+                      <span className="text-[14px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200">Puppy</span>
+                      <span className="text-[10px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200">Under 6 months</span>
                     </div>
-                    <img
-                      src="/images/img_vector.svg"
-                      alt="Puppy"
-                      className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px]"
-                      aria-hidden="true"
-                    />
+
+                    <div className="relative">
+                      {/* Default image (hidden on hover) */}
+                      <img
+                        src="/images/img_vector.svg"
+                        alt="Puppy"
+                        className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] group-hover:opacity-0 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                      {/* Hover image (shown on hover) */}
+                      <img
+                        src="/images/img_vector_white_dog.svg"
+                        alt="Puppy"
+                        className="absolute top-0 left-0 w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                    </div>
                   </button>
 
                   {/* Dog */}
@@ -163,7 +174,7 @@ const HomePage = () => {
 
                   {/* Other */}
                   <Dropdown
-                    placeholder="Other: "
+                    placeholder="Other: Please Select"
                     options={otherPetTypes}
                     value={selectedPetType}
                     onChange={(option) => {
