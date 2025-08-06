@@ -7,6 +7,7 @@ import DatePicker2 from '@/components/common/DatePicker2.jsx';
 import DatePicker from '@/components/common/DatePicker.jsx';
 import PetSelection from '@/components/common/PetSelection.jsx';
 import PetSlider from '@/components/common/PetSlider.jsx';
+import TestimonialSlider from '@/components/common/TestimonialSlider.jsx';
 
 const HomePage = () => {
   const [selectedPetType, setSelectedPetType] = useState('');
@@ -36,54 +37,6 @@ const HomePage = () => {
     { label: 'Kalutara', value: 'kalutara' },
     { label: 'Gampaha', value: 'gampaha' },
     { label: 'Kandy', value: 'kandy' }
-  ];
-
-  const lostPets = [
-    {
-      id: 1,
-      name: 'Ruby',
-      breed: 'Golden Retriever',
-      image: '/images/img_molly_006_2829x1886_2726x1886.png',
-      lastSeen: 'Last Seen near CCC-Colombo, 12th May 2025'
-    },
-    {
-      id: 2,
-      name: 'Lara',
-      breed: 'Domestic shorthan',
-      image: '/images/img_molly_006_2829x1886_2726x1886_196x284.png',
-      lastSeen: 'Last Seen near Town Hall-Kalutara, 12th May 2025'
-    },
-    {
-      id: 3,
-      name: 'Dudu',
-      breed: 'Domestic shorthan',
-      image: '/images/img_molly_006_2829x1886_2726x1886_1.png',
-      lastSeen: 'Last Seen near CCC-Colombo, 12th May 2025'
-    }
-  ];
-
-  const testimonials = [
-    {
-      id: 1,
-      name: 'Jane Doe',
-      title: 'Owner of Timy',
-      image: '/images/img_adorable_chihua.png',
-      testimonial: 'I was nervous to leave Timy with strangers, but my worries quickly faded. Going forward pawla will be my first choice for pet sitting.keep it up pawLa team'
-    },
-    {
-      id: 2,
-      name: 'Alice Ray',
-      title: 'Owner of Ruby',
-      image: '/images/img_adorable_chihua_124x124.png',
-      testimonial: 'Thanks to this PawLa site i found my little fur baby. i was so broken and down then. heart-felt thanks to this site. wish you all the best for your future works.'
-    },
-    {
-      id: 3,
-      name: 'Paula Kate',
-      title: 'Owner of Molly',
-      image: '/images/img_adorable_chihua_1.png',
-      testimonial: 'My sitter took great care of my cat, above and beyond my whole expectations. I would book with PawLa again in a heartbeat!'
-    }
   ];
 
   const faqItems = [
@@ -469,6 +422,8 @@ const HomePage = () => {
       </section>
 
       {/* Testimonials Section */}
+      <TestimonialSlider />
+{/*
       <section className="w-full py-12 sm:py-16 md:py-20">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-[28px] sm:text-[32px] md:text-[36px] font-poppins font-normal text-center mb-12">
@@ -501,6 +456,8 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+*/}
+
       {/* Pet Store Section */}
       <section className="w-full bg-[#752890] py-12 sm:py-16 md:py-20 relative overflow-hidden">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
