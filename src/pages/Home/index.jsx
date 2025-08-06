@@ -3,6 +3,8 @@ import Header from '../../components/common/Header';
 import Button from '../../components/ui/Button';
 import EditText from '../../components/ui/EditText';
 import Dropdown from '../../components/ui/Dropdown';
+import DatePicker2 from '@/components/common/DatePicker2.jsx';
+import DatePicker from '@/components/common/DatePicker.jsx';
 
 const HomePage = () => {
   const [selectedPetType, setSelectedPetType] = useState('');
@@ -187,7 +189,7 @@ const HomePage = () => {
                 </h3>
                 <div className="flex flex-wrap gap-3 sm:gap-4">
                   {/* Pet Boarding */}
-                  <div className="w-[140px] flex items-center bg-[#e6a033] border border-[#e6a033] rounded-[12px] px-3 py-3">
+                  <div className="w-[140px] h-[60px] flex items-center bg-[#e6a033] border border-[#e6a033] rounded-[12px] px-3 py-3">
                     <span className="text-[14px] font-inter font-medium text-white mr-2">Pet Boarding</span>
                     <img src="/images/img_vector_white_a700.svg" alt="Boarding" className="w-[16px] h-[20px]" />
                   </div>
@@ -242,21 +244,14 @@ const HomePage = () => {
                     <div className="flex-1">
                       <h3 className="text-[16px] font-inter font-semibold text-[#5b5f6b] mb-2">For these days</h3>
                       <div className="flex gap-2 items-center">
-                        <div className="relative flex-1">
-                          <div className="border border-[#e6a033] rounded-[12px] px-4 py-4 text-[14px] font-inter font-medium text-[#e6a033]">
-                            Drop off
-                          </div>
-                          <img src="/images/img_calendar_fill.svg" alt="Calendar" className="absolute top-3 right-3 w-[20px] h-[20px]" />
+                        <div className="relative flex-1 ">
+                          <DatePicker2></DatePicker2>
                         </div>
                         
                         <img src="/images/img_arrow_right.svg" alt="Arrow" className="w-[24px] h-[12px]" />
                         
                         <div className="relative flex-1">
-                          <EditText
-                            placeholder="Pick Up"
-                            className="w-full"
-                          />
-                          <img src="/images/img_calendar_fill.svg" alt="Calendar" className="absolute top-3 right-3 w-[20px] h-[20px]" />
+                          <DatePicker></DatePicker>
                         </div>
                       </div>
                     </div>
@@ -265,7 +260,7 @@ const HomePage = () => {
                 
                 <Button
                   variant="primary"
-                  className="bg-[#d15634] text-white px-8 py-3 rounded-[26px] shadow-[0px_4px_10px_#0000000c] hover:bg-[#b8472a] w-full sm:w-auto"
+                  className=" w-[140px] h-[45px] bg-[#D15735] mb-[7px] text-white px-8 py-3 rounded-[26px] shadow-[0px_4px_10px_#0000000c] hover:bg-[#E6A033]"
                 >
                   Search
                 </Button>

@@ -30,7 +30,7 @@ const Button = ({
     ${baseClasses} 
     ${variants?.[variant]} 
     ${sizes?.[size]} 
-    ${fullWidth ? 'w-full' : ''} 
+    ${fullWidth ? 'w-' : ''} 
     ${disabled ? 'cursor-not-allowed opacity-50' : ''}
     ${className}
   `?.trim()?.replace(/\s+/g, ' ');

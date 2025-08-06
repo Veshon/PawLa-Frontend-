@@ -34,14 +34,14 @@ const Dropdown = ({
   
   const containerClasses = `
     relative
-    ${fullWidth ? 'w-full' : ''}
+    ${fullWidth ? 'w-[340px]' : ''}
     ${className}
   `?.trim()?.replace(/\s+/g, ' ');
 
   const dropdownClasses = `
     ${baseClasses}
     ${leftImage ? 'pl-12' : 'pl-3'}
-    ${rightImage ? 'pr-12' : 'pr-3'}
+    ${rightImage ? 'pr-5' : 'pr-3'}
     py-[18px]
     w-full
     flex items-center justify-between
@@ -67,7 +67,7 @@ const Dropdown = ({
         onClick={handleToggle}
         {...props}
       >
-        <span className={selectedValue ? 'text-[#e6a033]' : 'text-gray-400'}>
+        <span className={selectedValue ? 'text-[#e6a033]' : 'text-[#E6A033]'}>
           {displayText}
         </span>
         
