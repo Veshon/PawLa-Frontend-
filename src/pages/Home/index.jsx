@@ -299,46 +299,18 @@ const HomePage = () => {
               </p>
               <Button
                 variant="primary"
-                className="bg-[#d15634] text-white px-6 py-4 rounded-[14px] shadow-[0px_4px_10px_#0000000c] hover:bg-[#b8472a]"
+                className=" !bg-[#d15634] h-[50px] text-white px-6 py-4 rounded-[14px] shadow-[0px_4px_10px_#0000000c] hover:!bg-[#E6A033]"
               >
                 Help Reunite a Pet
               </Button>
             </div>
 
             {/* Pet Cards */}
-{/*
-            <div className="lg:w-3/4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                {lostPets?.map((pet) => (
-                  <div key={pet?.id} className="border border-[#e6a033] rounded-[20px] overflow-hidden">
-                    <img
-                      src={pet?.image}
-                      alt={pet?.name}
-                      className="w-full h-[196px] object-cover rounded-t-[20px]"
-                    />
-                    <div className="p-4">
-                      <p className="text-[18px] font-inter font-normal text-black text-center mb-1">
-                        {pet?.breed}
-                      </p>
-                      <h3 className="text-[22px] font-inter font-semibold text-black text-center mb-4">
-                        {pet?.name}
-                      </h3>
-                      <p className="text-[18px] font-inter font-normal text-black leading-[21px] mb-6">
-                        {pet?.lastSeen}
-                      </p>
-                      <a href="#" className="text-[14px] font-inter font-medium text-[#067bce] underline">
-                        View Details
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-*/}
-          <PetSlider></PetSlider>
+            <PetSlider></PetSlider>
           </div>
         </div>
       </section>
+
       {/* Adoption and Training Section */}
       <section className="w-full py-12 sm:py-16 md:py-20">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -353,7 +325,7 @@ const HomePage = () => {
               </p>
               <Button
                 variant="primary"
-                className="bg-[#d15634] text-white px-8 py-4 rounded-[14px] shadow-[0px_4px_10px_#0000000c] hover:bg-[#b8472a]"
+                className="!bg-[#d15634] h-[50px] text-white px-8 py-4 rounded-[14px] shadow-[0px_4px_10px_#0000000c] hover:!bg-[#E6A033]"
               >
                 Adopt a Pet
               </Button>
@@ -376,7 +348,7 @@ const HomePage = () => {
             </div>
 
             {/* Right Content - Training */}
-            <div className="lg:w-1/3 order-3 relative">
+            <div className="lg:w-2/3 order-3 relative">
               <div className="relative">
                 <img 
                   src="/images/img_front_view_cute.png" 
@@ -384,7 +356,7 @@ const HomePage = () => {
                   className="w-full h-[676px] object-cover rounded-[30px]"
                 />
                 <div className="absolute top-20 left-5 right-5 text-white">
-                  <h3 className="text-[28px] sm:text-[32px] md:text-[36px] font-poppins font-extrabold leading-tight mb-4">
+                  <h3 className="text-[28px] sm:text-[32px] md:text-[36px] text-[black] font-poppins font-extrabold leading-tight mb-4">
                     Training <span className="font-normal">that works</span>
                   </h3>
                   <p className="text-[16px] font-inter font-normal leading-[25px] mb-6">
@@ -392,7 +364,7 @@ const HomePage = () => {
                   </p>
                   <Button
                     variant="primary"
-                    className="bg-[#752890] text-white px-8 py-4 rounded-[14px] shadow-[0px_4px_10px_#0000000c] hover:bg-[#5f1f73]"
+                    className="!bg-[#752890] h-[50px] text-white px-8 py-4 rounded-[14px] shadow-[0px_4px_10px_#0000000c] hover:bg-[#5f1f73]"
                   >
                     Find Trainers
                   </Button>
@@ -402,40 +374,62 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
       {/* What We Offer Section */}
       <section className="w-full py-12 sm:py-16 md:py-20">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
             {/* Left Image and Process */}
-            <div className="lg:w-1/2 relative">
-              <img 
-                src="/images/img_happy_woman_with_dog.png" 
-                alt="Happy woman with dog"
-                className="w-full h-[792px] object-cover rounded-[40px]"
-              />
-              
-              {/* Process Steps */}
-              <div className="absolute right-[-60px] top-1/2 transform -translate-y-1/2 bg-[#752890] rounded-[14px] p-16 hidden lg:block">
-                <div className="flex flex-col items-center gap-8">
-                  {/* Search */}
-                  <div className="text-center">
-                    <img src="/images/img_searching_svgrepo_com.svg" alt="Search" className="w-[40px] h-[44px] mx-auto mb-2" />
-                    <p className="text-[28px] font-caveat font-normal text-white">Search</p>
-                  </div>
-                  
-                  {/* Book & Pay */}
-                  <div className="bg-[#87ceeb] rounded-lg p-6 text-center">
-                    <div className="flex items-center justify-center mb-2">
-                      <img src="/images/img_playing_with_bu.svg" alt="Book" className="w-[24px] h-[44px]" />
-                      <img src="/images/img_rectangle_35.svg" alt="Pay" className="w-[14px] h-[10px] ml-1" />
+            <div className="w-full lg:w-1/2 transform -translate-x-32 relative left-[-30px]">
+              <div
+                className="relative w-full h-[792px] bg-cover bg-center rounded-[40px]"
+                style={{ backgroundImage: "url('/images/img_happy_woman_with_dog.png')" }}
+              >
+                {/*purple box with the 3 functions*/}
+                <div className="!bg-[#752991] absolute right-[-100px] w-[158px] h-[600px] top-1/2 transform -translate-y-1/2 bg-button-1 rounded-[20px] p-8 mr-8">
+                  <div className="flex flex-col items-center gap-16">
+                    {/* Search Step */}
+                    <div className="flex flex-col items-center ">
+                      <img
+                        src="/images/img_searching_svgrepo_com.svg"
+                        alt="search"
+                        className="w-[42px] h-[48px] mb-2"
+                      />
+                      <span className="text-2xl font-normal text-[white]">
+                        Search
+                      </span>
                     </div>
-                    <p className="text-[28px] font-caveat font-normal text-white">Book & Pay</p>
-                  </div>
-                  
-                  {/* Relax */}
-                  <div className="text-center">
-                    <img src="/images/img_hammock_svgrepo_com.svg" alt="Relax" className="w-[66px] h-[28px] mx-auto mb-2" />
-                    <p className="text-[28px] font-caveat font-normal text-white">Relax</p>
+
+                    {/* Book & Pay Step */}
+                    <div className="bg-[#87CEEB] rounded-lg p-8 flex flex-col items-center">
+                      <div className="flex items-center mb-2">
+                        <img
+                          src="/images/img_playing_with_bu.svg"
+                          alt="booking"
+                          className="w-[26px] h-[48px]"
+                        />
+                        <img
+                          src="/images/img_rectangle_35.svg"
+                          alt="payment"
+                          className="w-[16px] h-[10px] ml-2"
+                        />
+                      </div>
+                      <span className="text-2xl font-normal text-[white] text-center leading-tight">
+                        Book & Pay
+                      </span>
+                    </div>
+
+                    {/* Relax Step */}
+                    <div className="flex flex-col items-center">
+                      <img
+                        src="/images/img_hammock_svgrepo_com.svg"
+                        alt="relax"
+                        className="w-[70px] h-[30px] mb-2"
+                      />
+                      <span className="text-2xl font-normal text-[white]">
+                        Relax
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -473,6 +467,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
       {/* Testimonials Section */}
       <section className="w-full py-12 sm:py-16 md:py-20">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
