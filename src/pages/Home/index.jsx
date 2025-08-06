@@ -24,6 +24,12 @@ const HomePage = () => {
     { label: 'Other', value: 'other' }
   ];
 
+  const otherPetTypes = [
+    { label: 'Guinea pig', value: 'guineaPig' },
+    { label: 'Bird', value: 'bird' },
+    { label: 'Hamster', value: 'hamster' },
+  ];
+
   const services = [
     { label: 'Pet Boarding', value: 'boarding' },
     { label: 'Pet Sitting', value: 'sitting' },
@@ -91,63 +97,109 @@ const HomePage = () => {
                 </h3>
                 <div className="flex flex-wrap gap-3 sm:gap-4 mb-4">
                   {/* Puppy */}
-                  <div className="flex items-center bg-[#e6a033] border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3">
+                  <button
+                    type="button"
+                    className="flex items-center bg-[#e6a033] border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#d15735] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50"
+                    onClick={() => {
+                      console.log('Puppy selected');
+                    }}
+                  >
                     <div className="flex flex-col mr-2">
                       <span className="text-[14px] font-inter font-medium text-white">Puppy</span>
                       <span className="text-[10px] font-inter font-medium text-white">Under 6 months</span>
                     </div>
-                    <img src="/images/img_vector.svg" alt="Puppy" className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px]" />
-                  </div>
+                    <img
+                      src="/images/img_vector.svg"
+                      alt="Puppy"
+                      className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px]"
+                      aria-hidden="true"
+                    />
+                  </button>
 
                   {/* Dog */}
-                  <div className="flex items-center border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3">
+                  <button
+                    type="button"
+                    className="flex items-center border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a03310] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50"
+                    onClick={() => {
+                      // Handle dog selection
+                      console.log('Dog selected');
+                    }}
+                  >
                     <div className="flex flex-col mr-2">
                       <span className="text-[14px] font-inter font-medium text-[#e6a033]">Dog</span>
                       <span className="text-[10px] font-inter font-medium text-[#e6a033]">Over 6 months</span>
                     </div>
-                    <img src="/images/img_vector_yellow_800.svg" alt="Dog" className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px]" />
-                  </div>
+                    <img
+                      src="/images/img_vector_yellow_800.svg"
+                      alt="Dog"
+                      className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px]"
+                      aria-hidden="true"
+                    />
+                  </button>
 
                   {/* Cat */}
-                  <div className="w-[140px] flex items-center justify-center gap-12 border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3">
+                  <button type="button" className="w-[140px] flex items-center justify-center gap-12 border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a03310] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50"
+                    onClick={() => {
+                      console.log('Cat selected');
+                    }}
+                  >
                     <span className="text-[14px] font-inter font-medium text-[#e6a033]">Cat</span>
                     <img
                       src="/images/img_vector_yellow_800_18x24.svg"
-                      alt="Rabbit"
+                      alt="Cat"
                       className="w-[22px] h-[24px] sm:w-[26px] sm:h-[30px]"
                     />
-                  </div>
+                  </button>
 
                   {/* Rabbit */}
-                  <div className="w-[140px] flex items-center justify-center gap-8 border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3">
+                  <button type="button" className="w-[140px] flex items-center justify-center gap-8 border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a03310] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50"
+                    onClick={() => {
+                      console.log('Rabbit selected');
+                    }}
+                  >
                     <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2">Rabbit</span>
                     <img src="/images/img_vector_yellow_800_30x26.svg" alt="Rabbit" className="w-[22px] h-[24px] sm:w-[26px] sm:h-[30px]" />
-                  </div>
+                  </button>
 
                   {/* Other */}
-                  <div className="flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3">
+                  <Dropdown
+                    placeholder="Other: "
+                    options={otherPetTypes}
+                    value={selectedPetType}
+                    onChange={(option) => {
+                      setSelectedPetType(option?.value);
+                      console.log('Selected animal:', option?.label);
+                    }}
+                    style={{ width: "189px" }}
+                    rightImage={{
+                      src: "/images/img_vector_yellow_800_8x12.svg",
+                      width: 12,
+                      height: 18
+                    }}
+                  />
+                  {/*<div className="flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3">
                     <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2">Other :</span>
                     <span className="text-[14px] font-inter font-normal text-[#e6a033] mr-2">Please Select</span>
                     <img src="/images/img_vector_yellow_800_8x12.svg" alt="Dropdown" className="w-[12px] h-[8px]" />
-                  </div>
+                  </div>*/}
                 </div>
 
                 <PetSelection></PetSelection>
-                {/*<button*/}
-                {/*  type="button"*/}
-                {/*  className="flex items-center bg-transparent border-none p-0 cursor-pointer hover:opacity-80 transition-opacity"*/}
-                {/*  onClick={() => setShowPetSelection(true)}*/}
-                {/*>*/}
-                {/*  <img*/}
-                {/*    src="/images/img_vector_yellow_800_12x12.svg"*/}
-                {/*    alt=""*/}
-                {/*    className="w-[12px] h-[12px] mr-1"*/}
-                {/*    aria-hidden="true"*/}
-                {/*  />*/}
-                {/*  <span className="text-[14px] font-inter font-medium text-[#e6a033] underline">*/}
-                {/*      add another pet*/}
-                {/*  </span>*/}
-                {/*</button>*/}
+                {/*<button
+                  type="button"
+                  className="flex items-center bg-transparent border-none p-0 cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => setShowPetSelection(true)}
+                >
+                  <img
+                    src="/images/img_vector_yellow_800_12x12.svg"
+                    alt=""
+                    className="w-[12px] h-[12px] mr-1"
+                    aria-hidden="true"
+                  />
+                  <span className="text-[14px] font-inter font-medium text-[#e6a033] underline">
+                      add another pet
+                  </span>
+                </button>*/}
               </div>
 
               {/* Service Selection */}
@@ -482,12 +534,12 @@ const HomePage = () => {
         <img 
           src="/images/img_photo_illustrat.png" 
           alt="Pet illustration"
-          className="absolute -left-5 bottom-0 w-[294px] h-[424px] rounded-[40px]"
+          className="absolute left-0 bottom-0 w-[294px] h-[424px] rounded-[40px]"
         />
         <img 
           src="/images/img_cute_little_dog.png" 
           alt="Cute little dog"
-          className="absolute -right-5 bottom-0 w-[284px] h-[424px] rounded-[40px]"
+          className="absolute right-0 bottom-0 w-[284px] h-[424px] rounded-[40px]"
         />
         </div>
       </section>
