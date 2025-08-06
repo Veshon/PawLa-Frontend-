@@ -459,7 +459,7 @@ const HomePage = () => {
 */}
 
       {/* Pet Store Section */}
-      <section className="w-full bg-[#752890] py-12 sm:py-16 md:py-20 relative overflow-hidden">
+      <section className="w-full bg-[#752890] py-12 sm:py-16 md:py-20 relative overflow-visible">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <h2 className="text-[28px] sm:text-[32px] md:text-[36px] font-poppins font-extrabold text-white leading-tight mb-6">
@@ -470,7 +470,7 @@ const HomePage = () => {
             </p>
             <Button
               variant="primary"
-              className="bg-[#d15634] text-white px-8 py-4 rounded-[14px] shadow-[0px_4px_10px_#0000000c] hover:bg-[#b8472a]"
+              className="!bg-[#d15634] text-white px-8 py-4 rounded-[14px] shadow-[0px_4px_10px_#0000000c] hover:!bg-[#c24d2c]"
             >
               Shop Now
             </Button>
@@ -478,6 +478,7 @@ const HomePage = () => {
         </div>
         
         {/* Background Images */}
+        <div className="relative top-[150px]">
         <img 
           src="/images/img_photo_illustrat.png" 
           alt="Pet illustration"
@@ -488,13 +489,16 @@ const HomePage = () => {
           alt="Cute little dog"
           className="absolute right-0 bottom-0 w-[284px] h-[424px] rounded-[40px]"
         />
+        </div>
       </section>
+
       {/* Divider */}
-      <div className="w-full py-6">
+      <div className="w-full py-6 relative top-[150px]">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
           <img src="/images/img_group_548.png" alt="Divider" className="w-full h-[24px]" />
         </div>
       </div>
+
       {/* FAQ Section */}
       <section 
         className="w-full py-0 pb-0 sm:py-16 md:py-0 bg-cover bg-center bg-no-repeat relative top-[-200px]"
