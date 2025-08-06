@@ -151,20 +151,17 @@ const HomePage = () => {
                   </div>
 
                   {/* Cat */}
-                  <div className="flex-1 min-w-[120px]">
-                    <EditText
-                      placeholder="Cat"
-                      className="w-full"
-                      rightImage={{
-                        src: "/images/img_vector_yellow_800_18x24.svg",
-                        width: 24,
-                        height: 18
-                      }}
+                  <div className="w-[140px] flex items-center justify-center gap-12 border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3">
+                    <span className="text-[14px] font-inter font-medium text-[#e6a033]">Cat</span>
+                    <img
+                      src="/images/img_vector_yellow_800_18x24.svg"
+                      alt="Rabbit"
+                      className="w-[22px] h-[24px] sm:w-[26px] sm:h-[30px]"
                     />
                   </div>
 
                   {/* Rabbit */}
-                  <div className="flex items-center border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3">
+                  <div className="w-[140px] flex items-center justify-center gap-8 border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3">
                     <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2">Rabbit</span>
                     <img src="/images/img_vector_yellow_800_30x26.svg" alt="Rabbit" className="w-[22px] h-[24px] sm:w-[26px] sm:h-[30px]" />
                   </div>
@@ -190,25 +187,25 @@ const HomePage = () => {
                 </h3>
                 <div className="flex flex-wrap gap-3 sm:gap-4">
                   {/* Pet Boarding */}
-                  <div className="flex items-center bg-[#e6a033] border border-[#e6a033] rounded-[12px] px-3 py-3">
+                  <div className="w-[140px] flex items-center bg-[#e6a033] border border-[#e6a033] rounded-[12px] px-3 py-3">
                     <span className="text-[14px] font-inter font-medium text-white mr-2">Pet Boarding</span>
                     <img src="/images/img_vector_white_a700.svg" alt="Boarding" className="w-[16px] h-[20px]" />
                   </div>
 
                   {/* Pet Sitting */}
-                  <div className="flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3">
+                  <div className="w-[145px] flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3">
                     <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2">Pet Sitting</span>
                     <img src="/images/img_group.svg" alt="Sitting" className="w-[26px] h-[20px]" />
                   </div>
 
                   {/* Drop-In Visit */}
-                  <div className="flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3">
+                  <div className="w-[142px] flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3">
                     <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2">Drop-In Visit</span>
                     <img src="/images/img_bone_crack_svgrepo_com.svg" alt="Visit" className="w-[20px] h-[20px]" />
                   </div>
 
                   {/* Day Care */}
-                  <div className="relative flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3">
+                  <div className="w-[140px] relative flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3">
                     <span className="text-[14px] font-inter font-medium text-[#e6a033]">Day Care</span>
                     <img src="/images/img_group_yellow_800.svg" alt="Day Care" className="absolute top-2 right-2 w-[20px] h-[20px]" />
                   </div>
@@ -570,12 +567,12 @@ const HomePage = () => {
         </div>
       </section>
       {/* Footer */}
-      <footer className="w-full h-[500px] py-5 sm:py-16 relative"
+      <footer className="w-full h-[500px] py-5 sm:py-16 relative bg-no-repeat"
               style={{
                 backgroundImage: "url('/images/img_rectangle_11.png')",
                 backgroundSize: '100% auto',
-                // backgroundPosition: 'center'
-              }}      >
+              }}
+      >
         <div className="w-full pt-[100px] max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Footer Top */}
           <div className="text-center mb-8">
