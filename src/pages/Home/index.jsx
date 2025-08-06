@@ -195,7 +195,7 @@ const HomePage = () => {
                   </div>
 
                   {/* Pet Sitting */}
-                  <div className="w-[145px] flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3">
+                  <div className="w-[145px] flex items-center gap-4 border border-[#e6a033] rounded-[12px] px-3 py-3">
                     <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2">Pet Sitting</span>
                     <img src="/images/img_group.svg" alt="Sitting" className="w-[26px] h-[20px]" />
                   </div>
@@ -209,7 +209,7 @@ const HomePage = () => {
                   {/* Day Care */}
                   <div className="w-[140px] relative flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3">
                     <span className="text-[14px] font-inter font-medium text-[#e6a033]">Day Care</span>
-                    <img src="/images/img_group_yellow_800.svg" alt="Day Care" className="absolute top-2 right-2 w-[20px] h-[20px]" />
+                    <img src="/images/img_group_yellow_800.svg" alt="Day Care" className="absolute top-4 right-2 w-[20px] h-[20px]" />
                   </div>
 
                   {/* Other */}
