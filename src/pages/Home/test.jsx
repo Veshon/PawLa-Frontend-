@@ -1,3 +1,4 @@
+/*
 import React, { useState } from 'react';
 import Header from '../../components/common/Header';
 import Button from '../../components/ui/Button';
@@ -9,7 +10,6 @@ import PetSelection from '@/components/common/PetSelection.jsx';
 import PetSlider from '@/components/common/PetSlider.jsx';
 import TestimonialSlider from '@/components/common/TestimonialSlider.jsx';
 import FAQSection from '@/components/common/FAQSection.jsx';
-import Pets from '@/components/common/Pets.jsx';
 
 const HomePage = () => {
   const [selectedPetType, setSelectedPetType] = useState('');
@@ -81,14 +81,14 @@ const HomePage = () => {
   return (
     <div className="w-full bg-white">
       <Header />
-      {/* Hero Section */}
-      <section 
+      {/!* Hero Section *!/}
+      <section
         className="w-full bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/img_viewcatsdogsbeingfriends_1.png')" }}
       >
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
           <div className="flex flex-col items-center text-center">
-            {/* Hero Text */}
+            {/!* Hero Text *!/}
             <div className="mb-8 sm:mb-12 md:mb-16">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-4">
                 <h1 className="text-[18px] sm:text-[24px] md:text-[30px] font-poppins font-light text-[#d15634] leading-tight">
@@ -103,19 +103,177 @@ const HomePage = () => {
               </p>
             </div>
 
-            {/* Search Form */}
+            {/!* Search Form *!/}
             <div className="w-full max-w-4xl bg-white rounded-[20px] p-4 sm:p-6 lg:p-8 shadow-[0px_4px_20px_#0000000c]">
-              {/* Pet Selection */}
-             <Pets></Pets>
+              {/!* Pet Selection *!/}
+              <div className="mb-6">
+                <h3 className="text-[16px] font-inter font-semibold text-[#5b5f6b] mb-4">
+                  Who needs looking after
+                </h3>
+                <div className="flex flex-wrap gap-3 sm:gap-4 mb-4">
+                  {/!* Puppy *!/}
+                  <button
+                    type="button"
+                    className="flex items-center bg-[white] border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:bg-[#e6a033] focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50 group"
+                    onClick={() => {
+                      console.log('Puppy selected');
+                    }}
+                  >
+                    <div className="flex flex-col mr-2">
+                      <span className="text-[14px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 group-focus:text-white">Puppy</span>
+                      <span className="text-[10px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 group-focus:text-white">Under 6 months</span>
+                    </div>
 
-              {/* Service Selection */}
+                    <div className="relative">
+                      {/!* Default image (hidden on hover) *!/}
+                      <img
+                        src="/images/img_vector.svg"
+                        alt="Puppy"
+                        className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] group-hover:opacity-0 group-focus:opacity-0 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                      {/!* Hover image (shown on hover) *!/}
+                      <img
+                        src="/images/img_vector_white_dog.svg"
+                        alt="Puppy"
+                        className="absolute top-0 left-0 w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </button>
+
+                  {/!* Dog *!/}
+                  <button
+                    type="button"
+                    className="flex items-center border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#E6A033] transition-colors duration-200 focus:outline-none focus:bg-[#e6a033] focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50 group"
+                    onClick={() => {
+                      // Handle dog selection
+                      console.log('Dog selected');
+                    }}
+                  >
+                    <div className="flex flex-col mr-2">
+                      <span className="text-[14px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 group-focus:text-white">Dog</span>
+                      <span className="text-[10px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 group-focus:text-white">Over 6 months</span>
+                    </div>
+
+                    <div className="relative">
+                      {/!* Default image (hidden on hover) *!/}
+                      <img
+                        src="/images/img_vector_yellow_800.svg"
+                        alt="Puppy"
+                        className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] group-hover:opacity-0 group-focus:opacity-0 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                      {/!* Hover image (shown on hover) *!/}
+                      <img
+                        src="/images/img_vector_white_800.svg"
+                        alt="Puppy"
+                        className="absolute top-0 left-0 w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </button>
+
+                  {/!* Cat *!/}
+                  <button type="button" className="w-[140px] flex items-center justify-center gap-12 border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:bg-[#e6a033] focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50 group"
+                          onClick={() => {
+                            console.log('Cat selected');
+                          }}
+                  >
+                    <span className="text-[14px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 group-focus:text-white">Cat</span>
+
+                    <div className="relative">
+                      <img
+                        src="/images/img_vector_yellow_800_18x24.svg"
+                        alt="Puppy"
+                        className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] group-hover:opacity-0 group-focus:opacity-0 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+
+                      <img
+                        src="/images/img_vector_white_800_18x24.svg"
+                        alt="Puppy"
+                        className="absolute top-0 left-0 w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </button>
+
+                  {/!* Rabbit *!/}
+                  <button type="button" className="w-[140px] flex items-center justify-center gap-8 border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:ring-2 focus:bg-[#e6a033] focus:ring-[#e6a033] focus:ring-opacity-50 group"
+                          onClick={() => {
+                            console.log('Rabbit selected');
+                          }}
+                  >
+                    <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2 group-hover:text-white transition-colors duration-200 group-focus:text-white">Rabbit</span>
+
+                    <div className="relative">
+                      <img
+                        src="/images/img_vector_yellow_800_30x26.svg"
+                        alt="Puppy"
+                        className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] group-hover:opacity-0 group-focus:opacity-0 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+
+                      <img
+                        src="/images/img_vector_white_800_30x26.svg"
+                        alt="Puppy"
+                        className="absolute top-0 left-0 w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </button>
+
+                  {/!* Other *!/}
+                  <Dropdown
+                    placeholder="Other: Please Select"
+                    options={otherPetTypes}
+                    value={selectedPetType}
+                    onChange={(option) => {
+                      setSelectedPetType(option?.value);
+                      console.log('Selected animal:', option?.label);
+                    }}
+                    style={{ width: "189px" }}
+                    // className="hover:!text-[red] transition-colors duration-200"
+                    rightImage={{
+                      src: "/images/img_vector_yellow_800_8x12.svg",
+                      width: 12,
+                      height: 18
+                    }}
+                  />
+                  {/!*<div className="flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3">
+                    <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2">Other :</span>
+                    <span className="text-[14px] font-inter font-normal text-[#e6a033] mr-2">Please Select</span>
+                    <img src="/images/img_vector_yellow_800_8x12.svg" alt="Dropdown" className="w-[12px] h-[8px]" />
+                  </div>*!/}
+                </div>
+
+                <PetSelection></PetSelection>
+                {/!*<button
+                  type="button"
+                  className="flex items-center bg-transparent border-none p-0 cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => setShowPetSelection(true)}
+                >
+                  <img
+                    src="/images/img_vector_yellow_800_12x12.svg"
+                    alt=""
+                    className="w-[12px] h-[12px] mr-1"
+                    aria-hidden="true"
+                  />
+                  <span className="text-[14px] font-inter font-medium text-[#e6a033] underline">
+                      add another pet
+                  </span>
+                </button>*!/}
+              </div>
+
+              {/!* Service Selection *!/}
               <div className="mb-6">
                 <h3 className="text-[16px] font-inter font-semibold text-[#5b5f6b] mb-4">
                   Select the service
                 </h3>
                 <div className="flex flex-wrap gap-3 sm:gap-4">
 
-                  {/* Pet Boarding */}
+                  {/!* Pet Boarding *!/}
                   <button
                     type="button"
                     className="w-[140px] h-[60px] flex items-center bg-[white] border border-[#e6a033] hover:bg-[#e6a033] rounded-[12px] px-3 py-3 focus:outline-none focus:ring-2 focus:ring-[#e6a033] focus:bg-[#e6a033] focus:ring-opacity-50 transition-colors duration-200 group"
@@ -143,7 +301,7 @@ const HomePage = () => {
                     </div>
                   </button>
 
-                  {/* Pet Sitting */}
+                  {/!* Pet Sitting *!/}
                   <button
                     type="button"
                     className="w-[145px] flex items-center gap-4 border border-[#e6a033] rounded-[12px] px-3 py-3 bg-white hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:ring-2 focus:bg-[#e6a033] focus:ring-[#e6a033] focus:ring-opacity-50 group"
@@ -171,7 +329,7 @@ const HomePage = () => {
                     </div>
                   </button>
 
-                  {/* Drop-In Visit */}
+                  {/!* Drop-In Visit *!/}
                   <button
                     type="button"
                     className="w-[142px] flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3 bg-white hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#e6a033] focus:bg-[#e6a033] focus:ring-opacity-50 group"
@@ -199,7 +357,7 @@ const HomePage = () => {
                     </div>
                   </button>
 
-                  {/* Day Care */}
+                  {/!* Day Care *!/}
                   <button
                     type="button"
                     className="w-[140px] flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3 bg-white hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#e6a033] focus:bg-[#e6a033] focus:ring-opacity-50 group relative"
@@ -211,16 +369,16 @@ const HomePage = () => {
                       Day Care
                     </span>
 
-                    {/* Image with hover effect */}
+                    {/!* Image with hover effect *!/}
                     <div className="absolute top-1/2 right-2 transform -translate-y-1/2 w-[20px] h-[20px]">
-                      {/* Default yellow image */}
+                      {/!* Default yellow image *!/}
                       <img
                         src="/images/img_group_yellow_800.svg"
                         alt="Day Care"
                         className="absolute inset-0 w-full h-full group-hover:opacity-0 transition-opacity duration-200"
                         aria-hidden="true"
                       />
-                      {/* White image on hover */}
+                      {/!* White image on hover *!/}
                       <img
                         src="/images/img_group_white_800.svg"
                         alt="Day Care"
@@ -230,7 +388,7 @@ const HomePage = () => {
                     </div>
                   </button>
 
-                  {/* Other */}
+                  {/!* Other *!/}
                   <Dropdown
                     placeholder="Other: Please Select"
                     options={otherServiceTypes}
@@ -249,7 +407,7 @@ const HomePage = () => {
                 </div>
               </div>
 
-              {/* Location and Date Selection */}
+              {/!* Location and Date Selection *!/}
               <div className="flex flex-col lg:flex-row gap-4 items-end">
                 <div className="flex-1">
                   <div className="flex flex-col sm:flex-row gap-4 mb-4 lg:mb-0">
@@ -262,7 +420,7 @@ const HomePage = () => {
                         onChange={(option) => {
                           setSelectedDistrict(option?.value);
                           console.log('Selected district:', option?.label);
-                      }}
+                        }}
                         fullWidth
                         rightImage={{
                           src: "/images/img_vector_yellow_800_8x12.svg",
@@ -271,7 +429,7 @@ const HomePage = () => {
                         }}
                       />
                     </div>
-                    
+
                     <div className="flex-1">
                       <h3 className="text-[16px] font-inter font-semibold text-[#5b5f6b] mb-2">For these days</h3>
                       <div className="flex gap-2 items-center">
@@ -281,9 +439,9 @@ const HomePage = () => {
                             onChange={handleDateChange}
                           />
                         </div>
-                        
+
                         <img src="/images/img_arrow_right.svg" alt="Arrow" className="w-[24px] h-[12px]" />
-                        
+
                         <div className="relative flex-1">
                           <DatePicker
                             selected={selectedDate}
@@ -294,7 +452,7 @@ const HomePage = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <Button
                   variant="primary"
                   className=" w-[140px] h-[45px] !bg-[#D15735] mb-[7px] text-white px-8 py-3 rounded-[26px] shadow-[0px_4px_10px_#0000000c] hover:!bg-[#E6A033]"
@@ -307,11 +465,11 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Lost Pets Section */}
+      {/!* Lost Pets Section *!/}
       <section className="w-full py-12 sm:py-16 md:py-20">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-            {/* Left Content */}
+            {/!* Left Content *!/}
             <div className="lg:w-1/4">
               <h2 className="text-[28px] sm:text-[32px] md:text-[36px] font-poppins font-extrabold text-black leading-tight mb-4">
                 Help <span className="font-normal">find these fury babies</span>
@@ -327,17 +485,17 @@ const HomePage = () => {
               </Button>
             </div>
 
-            {/* Pet Cards */}
+            {/!* Pet Cards *!/}
             <PetSlider></PetSlider>
           </div>
         </div>
       </section>
 
-      {/* Adoption and Training Section */}
+      {/!* Adoption and Training Section *!/}
       <section className="w-full py-12 sm:py-16 md:py-20">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-            {/* Left Content */}
+            {/!* Left Content *!/}
             <div className="lg:w-1/3 order-2 lg:order-1">
               <h2 className="text-[28px] sm:text-[32px] md:text-[36px] font-poppins font-extrabold text-black leading-tight mb-6">
                 Give <span className="font-normal">Loving Home to a Fur baby</span>
@@ -353,27 +511,27 @@ const HomePage = () => {
               </Button>
             </div>
 
-            {/* Center Images */}
+            {/!* Center Images *!/}
             <div className="lg:w-1/3 order-1 lg:order-2">
               <div className="flex flex-col gap-3">
-                <img 
-                  src="/images/img_cute_australian.png" 
+                <img
+                  src="/images/img_cute_australian.png"
                   alt="Cute Australian"
                   className="w-full h-[280px] object-cover rounded-[30px]"
                 />
-                <img 
-                  src="/images/img_cute_australian_286x280.png" 
+                <img
+                  src="/images/img_cute_australian_286x280.png"
                   alt="Cute Australian 2"
                   className="w-full h-[286px] object-cover rounded-[30px]"
                 />
               </div>
             </div>
 
-            {/* Right Content - Training */}
+            {/!* Right Content - Training *!/}
             <div className="lg:w-2/3 order-3 relative">
               <div className="relative">
-                <img 
-                  src="/images/img_front_view_cute.png" 
+                <img
+                  src="/images/img_front_view_cute.png"
                   alt="Training"
                   className="w-full h-[676px] object-cover rounded-[30px]"
                 />
@@ -397,20 +555,20 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* What We Offer Section */}
+      {/!* What We Offer Section *!/}
       <section className="w-full py-12 sm:py-16 md:py-20">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-            {/* Left Image and Process */}
+            {/!* Left Image and Process *!/}
             <div className="w-full lg:w-1/2 transform -translate-x-32 relative left-[-30px]">
               <div
                 className="relative w-full h-[792px] bg-cover bg-center rounded-[40px]"
                 style={{ backgroundImage: "url('/images/img_happy_woman_with_dog.png')" }}
               >
-                {/*purple box with the 3 functions*/}
+                {/!*purple box with the 3 functions*!/}
                 <div className="!bg-[#752991] absolute right-[-100px] w-[158px] h-[600px] top-1/2 transform -translate-y-1/2 bg-button-1 rounded-[20px] p-8 mr-8">
                   <div className="flex flex-col items-center gap-16">
-                    {/* Search Step */}
+                    {/!* Search Step *!/}
                     <div className="flex flex-col items-center ">
                       <img
                         src="/images/img_searching_svgrepo_com.svg"
@@ -422,7 +580,7 @@ const HomePage = () => {
                       </span>
                     </div>
 
-                    {/* Book & Pay Step */}
+                    {/!* Book & Pay Step *!/}
                     <div className="bg-[#87CEEB] rounded-lg p-8 flex flex-col items-center">
                       <div className="flex items-center mb-2">
                         <img
@@ -441,7 +599,7 @@ const HomePage = () => {
                       </span>
                     </div>
 
-                    {/* Relax Step */}
+                    {/!* Relax Step *!/}
                     <div className="flex flex-col items-center">
                       <img
                         src="/images/img_hammock_svgrepo_com.svg"
@@ -457,26 +615,26 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Right Content */}
+            {/!* Right Content *!/}
             <div className="lg:w-1/2">
               <h2 className="text-[28px] sm:text-[32px] md:text-[36px] font-poppins leading-tight mb-8">
                 What We <span className="font-extrabold">Offer</span>
               </h2>
-              
+
               <div className="flex gap-4">
-                {/* Icons Column */}
+                {/!* Icons Column *!/}
                 <div className="flex flex-col gap-8">
                   {services_offered?.map((_, index) => (
-                    <img 
+                    <img
                       key={index}
-                      src="/images/img_vector_blue_200.svg" 
+                      src="/images/img_vector_blue_200.svg"
                       alt="Service icon"
                       className="w-[20px] h-[20px]"
                     />
                   ))}
                 </div>
-                
-                {/* Services Column */}
+
+                {/!* Services Column *!/}
                 <div className="flex-1 flex flex-col gap-8">
                   {services_offered?.map((service, index) => (
                     <p key={index} className="text-[16px] font-inter font-normal text-black leading-[20px]">
@@ -490,20 +648,20 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/!* Testimonials Section *!/}
       <TestimonialSlider />
-{/*
+      {/!*
       <section className="w-full py-12 sm:py-16 md:py-20">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-[28px] sm:text-[32px] md:text-[36px] font-poppins font-normal text-center mb-12">
             What Our Paw Parents <span className="font-extrabold">Say</span>
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials?.map((testimonial) => (
               <div key={testimonial?.id} className="border-2 border-[#e6a033] rounded-[30px] p-6 text-center">
-                <img 
-                  src={testimonial?.image} 
+                <img
+                  src={testimonial?.image}
                   alt={testimonial?.name}
                   className="w-[124px] h-[124px] rounded-full mx-auto mb-6 object-cover"
                 />
@@ -519,15 +677,15 @@ const HomePage = () => {
               </div>
             ))}
           </div>
-          
+
           <div className="text-center mt-6">
             <img src="/images/img_group_430.svg" alt="Pagination" className="w-[34px] h-[12px] mx-auto" />
           </div>
         </div>
       </section>
-*/}
+*!/}
 
-      {/* Pet Store Section */}
+      {/!* Pet Store Section *!/}
       <section className="w-full bg-[#752890] py-12 sm:py-16 md:py-20 relative overflow-visible">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
@@ -545,30 +703,30 @@ const HomePage = () => {
             </Button>
           </div>
         </div>
-        
-        {/* Background Images */}
+
+        {/!* Background Images *!/}
         <div className="relative top-[150px]">
-        <img 
-          src="/images/img_photo_illustrat.png" 
-          alt="Pet illustration"
-          className="absolute left-0 bottom-0 w-[294px] h-[424px] rounded-[40px]"
-        />
-        <img 
-          src="/images/img_cute_little_dog.png" 
-          alt="Cute little dog"
-          className="absolute right-0 bottom-0 w-[284px] h-[424px] rounded-[40px]"
-        />
+          <img
+            src="/images/img_photo_illustrat.png"
+            alt="Pet illustration"
+            className="absolute left-0 bottom-0 w-[294px] h-[424px] rounded-[40px]"
+          />
+          <img
+            src="/images/img_cute_little_dog.png"
+            alt="Cute little dog"
+            className="absolute right-0 bottom-0 w-[284px] h-[424px] rounded-[40px]"
+          />
         </div>
       </section>
 
-      {/* Divider */}
+      {/!* Divider *!/}
       <div className="w-full py-6 relative top-[150px]">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
           <img src="/images/img_group_548.png" alt="Divider" className="w-full h-[24px]" />
         </div>
       </div>
 
-      {/* FAQ Section */}
+      {/!* FAQ Section *!/}
       <section className="w-full py-0 pb-0 sm:py-16 md:py-0 bg-cover bg-center bg-no-repeat relative top-[-200px]">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#E6C9FF33] h-[800px] rounded-t-[100px] p-8 sm:p-12 lg:p-16 relative top-[400px]">
@@ -576,7 +734,7 @@ const HomePage = () => {
               FAQ
             </h2>
             <FAQSection></FAQSection>
-            {/*<div className="space-y-6">
+            {/!*<div className="space-y-6">
               {faqItems?.map((item, index) => (
                 <div key={index} className="border-b border-gray-200 pb-4">
                   <div className="flex items-center gap-6">
@@ -598,12 +756,12 @@ const HomePage = () => {
                   )}
                 </div>
               ))}
-            </div>*/}
+            </div>*!/}
           </div>
         </div>
       </section>
 
-      {/* Footer */}
+      {/!* Footer *!/}
       <footer className="w-full h-[460px] py-5 sm:py-16 relative bg-no-repeat"
               style={{
                 backgroundImage: "url('/images/img_rectangle_11.png')",
@@ -611,13 +769,13 @@ const HomePage = () => {
               }}
       >
         <div className="w-full pt-[100px] max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Footer Top */}
+          {/!* Footer Top *!/}
           <div className="text-center mb-8">
             <img src="/images/img_group_458.svg" alt="Footer logo" className="w-[34px] h-[20px] mx-auto mb-8 relative left-[120px]" />
           </div>
-          
+
           <div className="flex flex-col lg:flex-row justify-between gap-8 mb-8">
-            {/* Stay in the loop */}
+            {/!* Stay in the loop *!/}
             <div className="lg:w-1/3">
               <h3 className="text-[28px] font-inter text-[#752890] mb-4">
                 <span className="font-bold">Stay</span> in the loop
@@ -625,7 +783,7 @@ const HomePage = () => {
               <p className="text-[14px] font-inter font-normal text-black leading-[16px] mb-6">
                 Sign up to be the first to hear about any additions to our platform, news, promotions & specials offers
               </p>
-              
+
               <div className="flex border border-[#752890] rounded">
                 <div className="flex-1"></div>
                 <button className="bg-[#752890] text-white px-5 py-2 text-[20px] font-koulen">
@@ -634,7 +792,7 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Links */}
+            {/!* Links *!/}
             <div className="lg:w-1/3 text-center">
               <div className="space-y-2">
                 <a href="#" className="block text-[12px] font-inter font-normal text-black">Sign In</a>
@@ -648,7 +806,7 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* About PawLa */}
+            {/!* About PawLa *!/}
             <div className="lg:w-1/3">
               <h3 className="text-[28px] font-inter text-[#752890] mb-4">
                 About <span className="font-bold">PawLa</span>
@@ -658,13 +816,13 @@ const HomePage = () => {
               </p>
             </div>
           </div>
-          
+
           <div className="text-center">
             <img src="/images/img_group_427.svg" alt="Footer decoration" className="w-[34px] h-[20px] mx-auto mb-4 relative right-[130px]" />
           </div>
         </div>
-        
-        {/* Copyright */}
+
+        {/!* Copyright *!/}
         <div className="w-full bg-[#e6a033] py-2">
           <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-[12px] font-inter font-normal text-white">
@@ -677,4 +835,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default HomePage;*/
