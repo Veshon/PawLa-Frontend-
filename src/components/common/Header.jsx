@@ -20,21 +20,12 @@ const Header = () => {
         <div className="flex items-center justify-between py-3">
           {/* Logo Section */}
           <div className="flex items-center gap-2">
-            <div className="relative w-[18px] h-[40px]">
+            <div className="relative w-[100px] h-[40px]">
               <img 
-                src="/images/img_subtract.svg" 
+                src="/images/PawlaLogo.png"
                 alt="PawLa Logo" 
-                className="w-[18px] h-[40px]"
+                className="w-[100px] h-[40px]"
               />
-            </div>
-            <div className="flex flex-col">
-              <h1 className="text-[20px] font-dynapuff font-normal leading-[24px] text-black">
-                <span className="font-dynapuff">Paw</span>
-                <span className="font-dynalight"> | La</span>
-              </h1>
-              <p className="text-[12px] font-dosis font-normal leading-[16px] text-black">
-                The Paw Mate
-              </p>
             </div>
           </div>
 
