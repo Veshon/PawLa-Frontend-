@@ -737,10 +737,10 @@ const HomePage = () => {
               {faqItems?.map((item, index) => (
                 <div key={index} className="border-b border-gray-200 pb-4">
                   <div className="flex items-center gap-6">
-                    <img 
-                      src={item?.isOpen ? "/images/img_vector_yellow_800_24x24.svg" : "/images/img_vector_purple_800.svg"} 
-                      alt="FAQ icon" 
-                      className="w-[24px] h-[24px]" 
+                    <img
+                      src={item?.isOpen ? "/images/img_vector_yellow_800_24x24.svg" : "/images/img_vector_purple_800.svg"}
+                      alt="FAQ icon"
+                      className="w-[24px] h-[24px]"
                     />
                     <h3 className="text-[16px] font-inter font-medium text-black">
                       {item?.question}

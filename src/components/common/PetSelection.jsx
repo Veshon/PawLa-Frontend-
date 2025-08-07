@@ -1,57 +1,23 @@
 import React, { useState } from 'react';
+import Dropdown from '../../components/ui/Dropdown';
 
 const PetSelection = () => {
-  const [selectedPets, setSelectedPets] = useState([]);
+  const [selectedPetType, setSelectedPetType] = useState(null);
   const [showPetSelection, setShowPetSelection] = useState(false);
+  const [selectedPets, setSelectedPets] = useState([]);
 
-  const petTypes = [
-    {
-      type: 'Puppy',
-      age: 'Under 6 months',
-      bgColor: 'bg-[#e6a033]',
-      textColor: 'text-white',
-      icon: '/images/img_vector2.svg',
-      width: 'w-auto',
-      layout: 'dual-line'
-    },
-    {
-      type: 'Dog',
-      age: 'Over 6 months',
-      bgColor: 'bg-transparent',
-      textColor: 'text-[#e6a033]',
-      icon: '/images/img_vector_yellow_800.svg',
-      width: 'w-auto',
-      layout: 'dual-line'
-    },
-    {
-      type: 'Cat',
-      bgColor: 'bg-transparent',
-      textColor: 'text-[#e6a033]',
-      icon: '/images/img_vector_yellow_800_18x24.svg',
-      width: 'w-[140px]',
-      layout: 'compact'
-    },
-    {
-      type: 'Rabbit',
-      bgColor: 'bg-transparent',
-      textColor: 'text-[#e6a033]',
-      icon: '/images/img_vector_yellow_800_30x26.svg',
-      width: 'w-[140px]',
-      layout: 'compact'
-    },
-    {
-      type: 'Other',
-      bgColor: 'bg-transparent',
-      textColor: 'text-[#e6a033]',
-      icon: '/images/img_vector_yellow_800_8x12.svg',
-      width: 'w-auto',
-      layout: 'other'
-    }
+  const otherPetTypes = [
+    { value: 'bird', label: 'Bird' },
+    { value: 'hamster', label: 'Hamster' },
+    { value: 'fish', label: 'Fish' },
+    { value: 'reptile', label: 'Reptile' },
+    { value: 'other', label: 'Other' }
   ];
 
-  const addNewPet = (petType) => {
-    const newPet = petTypes.find(pet => pet.type.toLowerCase() === petType);
-    setSelectedPets([...selectedPets, { ...newPet, id: Date.now() }]);
+  const handlePetSelect = (petType) => {
+    console.log(`${petType} selected`);
+    // Add the selected pet to the list
+    setSelectedPets([...selectedPets, { type: petType, id: Date.now() }]);
     setShowPetSelection(false);
   };
 
@@ -61,69 +27,27 @@ const PetSelection = () => {
 
   return (
     <div>
-      {/* Selected Pets Display */}
+      {/* Display selected pets */}
       <div className="flex flex-wrap gap-3 sm:gap-4 mb-4">
         {selectedPets.map((pet) => (
           <div
             key={pet.id}
-            className={`relative flex items-center ${pet.bgColor} border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 ${pet.width}`}
+            className="relative flex items-center bg-white border border-[#e6a033] rounded-[12px] px-3 py-2"
           >
-            {/* Remove button (small x in top-right corner) */}
+            <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2">
+              {pet.type}
+            </span>
             <button
-              onClick={(e) => { e.stopPropagation(); removePet(pet.id); }}
+              onClick={() => removePet(pet.id)}
               className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs"
             >
               ×
             </button>
-
-            {/* Pet content */}
-            {pet.layout === 'dual-line' ? (
-              <>
-                <div className="flex flex-col mr-2">
-                  <span className={`text-[14px] font-inter font-medium ${pet.textColor}`}>
-                    {pet.type}
-                  </span>
-                  <span className={`text-[10px] font-inter font-medium ${pet.textColor}`}>
-                    {pet.age}
-                  </span>
-                </div>
-                <img
-                  src={pet.icon}
-                  alt={pet.type}
-                  className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px]"
-                />
-              </>
-            ) : pet.layout === 'other' ? (
-              <>
-                <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2">
-                  Other :
-                </span>
-                <span className="text-[14px] font-inter font-normal text-[#e6a033] mr-2">
-                  Please Select
-                </span>
-                <img
-                  src={pet.icon}
-                  alt="Dropdown"
-                  className="w-[12px] h-[8px]"
-                />
-              </>
-            ) : (
-              <>
-                <span className={`text-[14px] font-inter font-medium ${pet.textColor} ${pet.type === 'Rabbit' ? 'mr-2' : ''}`}>
-                  {pet.type}
-                </span>
-                <img
-                  src={pet.icon}
-                  alt={pet.type}
-                  className={`${pet.type === 'Cat' ? 'w-[22px] h-[24px] sm:w-[26px] sm:h-[30px]' : 'w-[22px] h-[24px] sm:w-[26px] sm:h-[30px]'}`}
-                />
-              </>
-            )}
           </div>
         ))}
       </div>
 
-      {/* Add Pet Button */}
+      {/* Add Pet Button - only shows when pet selection is hidden */}
       {!showPetSelection && (
         <button
           type="button"
@@ -142,28 +66,128 @@ const PetSelection = () => {
         </button>
       )}
 
-      {/* Pet Selection Modal */}
+      {/* Pet Selection UI - shows when button is clicked */}
       {showPetSelection && (
-        <div className="mb-6 p-4 rounded-lg bg-white">
-          <h3 className="text-[#e6a033] font-medium mb-3 text-[16px]">Select pet type:</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {petTypes.map((pet) => (
-              <button
-                key={pet.type}
-                onClick={() => addNewPet(pet.type.toLowerCase())}
-                className={`flex flex-col items-center p-3 border border-[#e6a033] rounded-[12px] hover:bg-[#e6a03310] transition-colors`}
-              >
+        <div className="mb-6">
+          <div className="flex flex-wrap gap-3 sm:gap-4 mb-4">
+            {/* Puppy */}
+            <button
+              type="button"
+              className="flex items-center bg-[white] border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:bg-[#e6a033] focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50 group"
+              onClick={() => handlePetSelect('Puppy')}
+            >
+              <div className="flex flex-col mr-2">
+                <span className="text-[14px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 group-focus:text-white">Puppy</span>
+                <span className="text-[10px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 group-focus:text-white">Under 6 months</span>
+              </div>
+
+              <div className="relative">
                 <img
-                  src={pet.icon}
-                  alt={pet.type}
-                  className="w-[30px] h-[30px] mb-2"
+                  src="/images/img_vector.svg"
+                  alt="Puppy"
+                  className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] group-hover:opacity-0 group-focus:opacity-0 transition-opacity duration-200"
+                  aria-hidden="true"
                 />
-                <span className="text-[14px] font-inter font-medium text-[#e6a033] text-center">
-                  {pet.type}
-                  {pet.age && <span className="block text-[12px] font-normal">{pet.age}</span>}
-                </span>
-              </button>
-            ))}
+                <img
+                  src="/images/img_vector_white_dog.svg"
+                  alt="Puppy"
+                  className="absolute top-0 left-0 w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200"
+                  aria-hidden="true"
+                />
+              </div>
+            </button>
+
+            {/* Dog */}
+            <button
+              type="button"
+              className="flex items-center border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#E6A033] transition-colors duration-200 focus:outline-none focus:bg-[#e6a033] focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50 group"
+              onClick={() => handlePetSelect('Dog')}
+            >
+              <div className="flex flex-col mr-2">
+                <span className="text-[14px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 group-focus:text-white">Dog</span>
+                <span className="text-[10px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 group-focus:text-white">Over 6 months</span>
+              </div>
+
+              <div className="relative">
+                <img
+                  src="/images/img_vector_yellow_800.svg"
+                  alt="Dog"
+                  className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] group-hover:opacity-0 group-focus:opacity-0 transition-opacity duration-200"
+                  aria-hidden="true"
+                />
+                <img
+                  src="/images/img_vector_white_800.svg"
+                  alt="Dog"
+                  className="absolute top-0 left-0 w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200"
+                  aria-hidden="true"
+                />
+              </div>
+            </button>
+
+            {/* Cat */}
+            <button
+              type="button"
+              className="w-[140px] flex items-center justify-center gap-12 border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:bg-[#e6a033] focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50 group"
+              onClick={() => handlePetSelect('Cat')}
+            >
+              <span className="text-[14px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 group-focus:text-white">Cat</span>
+
+              <div className="relative">
+                <img
+                  src="/images/img_vector_yellow_800_18x24.svg"
+                  alt="Cat"
+                  className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] group-hover:opacity-0 group-focus:opacity-0 transition-opacity duration-200"
+                  aria-hidden="true"
+                />
+                <img
+                  src="/images/img_vector_white_800_18x24.svg"
+                  alt="Cat"
+                  className="absolute top-0 left-0 w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200"
+                  aria-hidden="true"
+                />
+              </div>
+            </button>
+
+            {/* Rabbit */}
+            <button
+              type="button"
+              className="w-[140px] flex items-center justify-center gap-8 border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:ring-2 focus:bg-[#e6a033] focus:ring-[#e6a033] focus:ring-opacity-50 group"
+              onClick={() => handlePetSelect('Rabbit')}
+            >
+              <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2 group-hover:text-white transition-colors duration-200 group-focus:text-white">Rabbit</span>
+
+              <div className="relative">
+                <img
+                  src="/images/img_vector_yellow_800_30x26.svg"
+                  alt="Rabbit"
+                  className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] group-hover:opacity-0 group-focus:opacity-0 transition-opacity duration-200"
+                  aria-hidden="true"
+                />
+                <img
+                  src="/images/img_vector_white_800_30x26.svg"
+                  alt="Rabbit"
+                  className="absolute top-0 left-0 w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200"
+                  aria-hidden="true"
+                />
+              </div>
+            </button>
+
+            {/* Other */}
+            <Dropdown
+              placeholder="Other: Please Select"
+              options={otherPetTypes}
+              value={selectedPetType}
+              onChange={(option) => {
+                setSelectedPetType(option?.value);
+                handlePetSelect(option?.label);
+              }}
+              style={{ width: "189px" }}
+              rightImage={{
+                src: "/images/img_vector_yellow_800_8x12.svg",
+                width: 12,
+                height: 18
+              }}
+            />
           </div>
         </div>
       )}
