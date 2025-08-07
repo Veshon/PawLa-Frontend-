@@ -13,6 +13,7 @@ const HomePage = () => {
   const [selectedPetType, setSelectedPetType] = useState('');
   const [selectedServiceType, setSelectedServiceType] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState('');
+  const [selectedDate, setSelectedDate] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [showPetSelection, setShowPetSelection] = useState(false);
 
@@ -34,6 +35,13 @@ const HomePage = () => {
     { label: 'Walking', value: 'walking' },
     { label: 'House Visits', value: 'houseVisits' }
   ];
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    console.log('Selected date:', date);
+    // Formatted date string:
+    console.log('Formatted date:', date?.toLocaleDateString());
+  };
 
   const services = [
     { label: 'Pet Boarding', value: 'boarding' },
@@ -407,7 +415,10 @@ const HomePage = () => {
                         placeholder="District"
                         options={districts}
                         value={selectedDistrict}
-                        onChange={(option) => setSelectedDistrict(option?.value)}
+                        onChange={(option) => {
+                          setSelectedDistrict(option?.value);
+                          console.log('Selected district:', option?.label);
+                      }}
                         fullWidth
                         rightImage={{
                           src: "/images/img_vector_yellow_800_8x12.svg",
@@ -421,13 +432,19 @@ const HomePage = () => {
                       <h3 className="text-[16px] font-inter font-semibold text-[#5b5f6b] mb-2">For these days</h3>
                       <div className="flex gap-2 items-center">
                         <div className="relative flex-1 ">
-                          <DatePicker2></DatePicker2>
+                          <DatePicker2
+                            selected={selectedDate}
+                            onChange={handleDateChange}
+                          />
                         </div>
                         
                         <img src="/images/img_arrow_right.svg" alt="Arrow" className="w-[24px] h-[12px]" />
                         
                         <div className="relative flex-1">
-                          <DatePicker></DatePicker>
+                          <DatePicker
+                            selected={selectedDate}
+                            onChange={handleDateChange}
+                          />
                         </div>
                       </div>
                     </div>
