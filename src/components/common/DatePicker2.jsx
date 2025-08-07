@@ -19,7 +19,7 @@ function CustomDatePicker() {
         selected={startDate}
         onChange={handleDateChange}  // Updated to use our custom handler
         customInput={
-          <div className="border border-[#E6A033] flex items-center justify-between rounded-[12px] px-4 py-4 w-full lg:w-[140px] cursor-pointer">
+          <div className="border border-[#E6A033] flex items-center justify-between rounded-[12px] px-4 py-4 w-full lg:w-[140px] cursor-pointer hover:bg-[#E6A033] hover:bg-opacity-10 transition-colors duration-200">
             <span className="text-[14px] font-medium font-inter text-[#E6A033] ml-2">
               {startDate ? startDate.toLocaleDateString() : "Drop Off"}
             </span>

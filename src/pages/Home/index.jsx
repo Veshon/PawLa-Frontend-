@@ -453,7 +453,7 @@ const HomePage = () => {
                 
                 <Button
                   variant="primary"
-                  className=" w-[140px] h-[45px] !bg-[#D15735] mb-[7px] text-white px-8 py-3 rounded-[26px] shadow-[0px_4px_10px_#0000000c] hover:bg-[#E6A033]"
+                  className=" w-[140px] h-[45px] !bg-[#D15735] mb-[7px] text-white px-8 py-3 rounded-[26px] shadow-[0px_4px_10px_#0000000c] hover:!bg-[#E6A033]"
                 >
                   Search
                 </Button>
@@ -542,7 +542,7 @@ const HomePage = () => {
                   </p>
                   <Button
                     variant="primary"
-                    className="!bg-[#752890] h-[50px] text-white px-8 py-4 rounded-[14px] shadow-[0px_4px_10px_#0000000c] hover:bg-[#5f1f73]"
+                    className="!bg-[#752890] h-[50px] text-white px-8 py-4 rounded-[14px] shadow-[0px_4px_10px_#0000000c] hover:!bg-[#501a61]"
                   >
                     Find Trainers
                   </Button>
