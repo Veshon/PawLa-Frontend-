@@ -8,6 +8,7 @@ import DatePicker from '@/components/common/DatePicker.jsx';
 import PetSelection from '@/components/common/PetSelection.jsx';
 import PetSlider from '@/components/common/PetSlider.jsx';
 import TestimonialSlider from '@/components/common/TestimonialSlider.jsx';
+import FAQSection from '@/components/common/FAQSection.jsx';
 
 const HomePage = () => {
   const [selectedPetType, setSelectedPetType] = useState('');
@@ -725,17 +726,14 @@ const HomePage = () => {
       </div>
 
       {/* FAQ Section */}
-      <section 
-        className="w-full py-0 pb-0 sm:py-16 md:py-0 bg-cover bg-center bg-no-repeat relative top-[-200px]"
-        // style={{ backgroundImage: "url('/images/img_rectangle_11.png')" }}
-      >
+      <section className="w-full py-0 pb-0 sm:py-16 md:py-0 bg-cover bg-center bg-no-repeat relative top-[-200px]">
         <div className="w-full max-w-[1210px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#E6C9FF33] h-[800px] rounded-t-[100px] p-8 sm:p-12 lg:p-16 relative top-[400px]">
             <h2 className="text-[32px] sm:text-[36px] font-poppins font-extrabold text-[#752890] text-center mb-12">
               FAQ
             </h2>
-            
-            <div className="space-y-6">
+            <FAQSection></FAQSection>
+            {/*<div className="space-y-6">
               {faqItems?.map((item, index) => (
                 <div key={index} className="border-b border-gray-200 pb-4">
                   <div className="flex items-center gap-6">
@@ -757,7 +755,7 @@ const HomePage = () => {
                   )}
                 </div>
               ))}
-            </div>
+            </div>*/}
           </div>
         </div>
       </section>
