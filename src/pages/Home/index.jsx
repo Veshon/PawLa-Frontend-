@@ -11,7 +11,7 @@ import TestimonialSlider from '@/components/common/TestimonialSlider.jsx';
 
 const HomePage = () => {
   const [selectedPetType, setSelectedPetType] = useState('');
-  const [selectedService, setSelectedService] = useState('');
+  const [selectedServiceType, setSelectedServiceType] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
   const [showPetSelection, setShowPetSelection] = useState(false);
@@ -28,6 +28,11 @@ const HomePage = () => {
     { label: 'Guinea pig', value: 'guineaPig' },
     { label: 'Bird', value: 'bird' },
     { label: 'Hamster', value: 'hamster' },
+  ];
+
+  const otherServiceTypes = [
+    { label: 'Walking', value: 'walking' },
+    { label: 'House Visits', value: 'houseVisits' }
   ];
 
   const services = [
@@ -257,36 +262,138 @@ const HomePage = () => {
                   Select the service
                 </h3>
                 <div className="flex flex-wrap gap-3 sm:gap-4">
+
                   {/* Pet Boarding */}
-                  <div className="w-[140px] h-[60px] flex items-center bg-[#e6a033] border border-[#e6a033] rounded-[12px] px-3 py-3">
-                    <span className="text-[14px] font-inter font-medium text-white mr-2">Pet Boarding</span>
-                    <img src="/images/img_vector_white_a700.svg" alt="Boarding" className="w-[16px] h-[20px]" />
-                  </div>
+                  <button
+                    type="button"
+                    className="w-[140px] h-[60px] flex items-center bg-[white] border border-[#e6a033] hover:bg-[#e6a033] rounded-[12px] px-3 py-3 focus:outline-none focus:ring-2 focus:ring-[#e6a033] focus:bg-[#e6a033] focus:ring-opacity-50 transition-colors duration-200 group"
+                    onClick={() => {
+                      console.log('Pet Boarding Selected');
+                    }}
+                  >
+                    <span className="text-[14px] font-inter font-medium text-[#e6a033] group-hover:text-white mr-2 transition-colors duration-200 group-focus:text-white">
+                      Pet Boarding
+                    </span>
+
+                    <div className="relative w-[16px] h-[20px]">
+                      <img
+                        src="/images/img_vector_yellow_a700.svg"
+                        alt="Boarding"
+                        className="absolute top-0 left-0 w-[16px] h-[20px] group-hover:opacity-0 group-focus:opacity-0 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                      <img
+                        src="/images/img_vector_white_a700.svg"
+                        alt="Boarding"
+                        className="absolute top-0 left-0 w-[16px] h-[20px] opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </button>
 
                   {/* Pet Sitting */}
-                  <div className="w-[145px] flex items-center gap-4 border border-[#e6a033] rounded-[12px] px-3 py-3">
-                    <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2">Pet Sitting</span>
-                    <img src="/images/img_group.svg" alt="Sitting" className="w-[26px] h-[20px]" />
-                  </div>
+                  <button
+                    type="button"
+                    className="w-[145px] flex items-center gap-4 border border-[#e6a033] rounded-[12px] px-3 py-3 bg-white hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:ring-2 focus:bg-[#e6a033] focus:ring-[#e6a033] focus:ring-opacity-50 group"
+                    onClick={() => {
+                      console.log('Pet Sitting Selected');
+                    }}
+                  >
+                    <span className="text-[14px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 group-focus:text-white">
+                      Pet Sitting
+                    </span>
+
+                    <div className="relative w-[26px] h-[20px]">
+                      <img
+                        src="/images/img_group.svg"
+                        alt="Sitting"
+                        className="absolute inset-0 w-full h-full group-hover:opacity-0 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                      <img
+                        src="/images/img_group_white.svg"
+                        alt="Sitting"
+                        className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </button>
 
                   {/* Drop-In Visit */}
-                  <div className="w-[142px] flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3">
-                    <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2">Drop-In Visit</span>
-                    <img src="/images/img_bone_crack_svgrepo_com.svg" alt="Visit" className="w-[20px] h-[20px]" />
-                  </div>
+                  <button
+                    type="button"
+                    className="w-[142px] flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3 bg-white hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#e6a033] focus:bg-[#e6a033] focus:ring-opacity-50 group"
+                    onClick={() => {
+                      console.log('Drop-In Selected');
+                    }}
+                  >
+                    <span className="text-[14px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 mr-2 group-focus:text-white">
+                      Drop-In Visit
+                    </span>
+
+                    <div className="relative w-[20px] h-[20px]">
+                      <img
+                        src="/images/img_bone_crack_svgrepo_com.svg"
+                        alt="Visit"
+                        className="absolute inset-0 w-full h-full group-hover:opacity-0 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                      <img
+                        src="/images/img_bone_crack_white_svgrepo_com.svg"
+                        alt="Visit"
+                        className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </button>
 
                   {/* Day Care */}
-                  <div className="w-[140px] relative flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3">
-                    <span className="text-[14px] font-inter font-medium text-[#e6a033]">Day Care</span>
-                    <img src="/images/img_group_yellow_800.svg" alt="Day Care" className="absolute top-4 right-2 w-[20px] h-[20px]" />
-                  </div>
+                  <button
+                    type="button"
+                    className="w-[140px] flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3 bg-white hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#e6a033] focus:bg-[#e6a033] focus:ring-opacity-50 group relative"
+                    onClick={() => {
+                      console.log('Day Care Selected');
+                    }}
+                  >
+                    <span className="text-[14px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 group-focus:text-white">
+                      Day Care
+                    </span>
+
+                    {/* Image with hover effect */}
+                    <div className="absolute top-1/2 right-2 transform -translate-y-1/2 w-[20px] h-[20px]">
+                      {/* Default yellow image */}
+                      <img
+                        src="/images/img_group_yellow_800.svg"
+                        alt="Day Care"
+                        className="absolute inset-0 w-full h-full group-hover:opacity-0 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                      {/* White image on hover */}
+                      <img
+                        src="/images/img_group_white_800.svg"
+                        alt="Day Care"
+                        className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </button>
 
                   {/* Other */}
-                  <div className="flex items-center border border-[#e6a033] rounded-[12px] px-3 py-3">
-                    <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2">Other :</span>
-                    <span className="text-[14px] font-inter font-normal text-[#e6a033] mr-2">Please Select</span>
-                    <img src="/images/img_vector_yellow_800_8x12.svg" alt="Dropdown" className="w-[12px] h-[8px]" />
-                  </div>
+                  <Dropdown
+                    placeholder="Other: Please Select"
+                    options={otherServiceTypes}
+                    value={selectedServiceType}
+                    onChange={(option) => {
+                      setSelectedServiceType(option?.value);
+                      console.log('Selected service:', option?.label);
+                    }}
+                    style={{ width: "189px" }}
+                    rightImage={{
+                      src: "/images/img_vector_yellow_800_8x12.svg",
+                      width: 12,
+                      height: 18
+                    }}
+                  />
                 </div>
               </div>
 
@@ -329,7 +436,7 @@ const HomePage = () => {
                 
                 <Button
                   variant="primary"
-                  className=" w-[140px] h-[45px] bg-[#D15735] mb-[7px] text-white px-8 py-3 rounded-[26px] shadow-[0px_4px_10px_#0000000c] hover:bg-[#E6A033]"
+                  className=" w-[140px] h-[45px] !bg-[#D15735] mb-[7px] text-white px-8 py-3 rounded-[26px] shadow-[0px_4px_10px_#0000000c] hover:bg-[#E6A033]"
                 >
                   Search
                 </Button>
