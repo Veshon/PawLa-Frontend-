@@ -99,14 +99,14 @@ const HomePage = () => {
                   {/* Puppy */}
                   <button
                     type="button"
-                    className="flex items-center bg-[white] border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50 group"
+                    className="flex items-center bg-[white] border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:bg-[#e6a033] focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50 group"
                     onClick={() => {
                       console.log('Puppy selected');
                     }}
                   >
                     <div className="flex flex-col mr-2">
-                      <span className="text-[14px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200">Puppy</span>
-                      <span className="text-[10px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200">Under 6 months</span>
+                      <span className="text-[14px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 group-focus:text-white">Puppy</span>
+                      <span className="text-[10px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 group-focus:text-white">Under 6 months</span>
                     </div>
 
                     <div className="relative">
@@ -114,14 +114,14 @@ const HomePage = () => {
                       <img
                         src="/images/img_vector.svg"
                         alt="Puppy"
-                        className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] group-hover:opacity-0 transition-opacity duration-200"
+                        className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] group-hover:opacity-0 group-focus:opacity-0 transition-opacity duration-200"
                         aria-hidden="true"
                       />
                       {/* Hover image (shown on hover) */}
                       <img
                         src="/images/img_vector_white_dog.svg"
                         alt="Puppy"
-                        className="absolute top-0 left-0 w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                        className="absolute top-0 left-0 w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200"
                         aria-hidden="true"
                       />
                     </div>
@@ -160,27 +160,53 @@ const HomePage = () => {
                   </button>
 
                   {/* Cat */}
-                  <button type="button" className="w-[140px] flex items-center justify-center gap-12 border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a03310] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50"
+                  <button type="button" className="w-[140px] flex items-center justify-center gap-12 border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:bg-[#e6a033] focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50 group"
                     onClick={() => {
                       console.log('Cat selected');
                     }}
                   >
-                    <span className="text-[14px] font-inter font-medium text-[#e6a033]">Cat</span>
-                    <img
-                      src="/images/img_vector_yellow_800_18x24.svg"
-                      alt="Cat"
-                      className="w-[22px] h-[24px] sm:w-[26px] sm:h-[30px]"
-                    />
+                    <span className="text-[14px] font-inter font-medium text-[#e6a033] group-hover:text-white transition-colors duration-200 group-focus:text-white">Cat</span>
+
+                    <div className="relative">
+                      <img
+                        src="/images/img_vector_yellow_800_18x24.svg"
+                        alt="Puppy"
+                        className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] group-hover:opacity-0 group-focus:opacity-0 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+
+                      <img
+                        src="/images/img_vector_white_800_18x24.svg"
+                        alt="Puppy"
+                        className="absolute top-0 left-0 w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                    </div>
                   </button>
 
                   {/* Rabbit */}
-                  <button type="button" className="w-[140px] flex items-center justify-center gap-8 border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a03310] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#e6a033] focus:ring-opacity-50"
+                  <button type="button" className="w-[140px] flex items-center justify-center gap-8 border border-[#e6a033] rounded-[12px] px-2 py-2 sm:px-3 sm:py-3 hover:bg-[#e6a033] transition-colors duration-200 focus:outline-none focus:ring-2 focus:bg-[#e6a033] focus:ring-[#e6a033] focus:ring-opacity-50 group"
                     onClick={() => {
                       console.log('Rabbit selected');
                     }}
                   >
-                    <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2">Rabbit</span>
-                    <img src="/images/img_vector_yellow_800_30x26.svg" alt="Rabbit" className="w-[22px] h-[24px] sm:w-[26px] sm:h-[30px]" />
+                    <span className="text-[14px] font-inter font-medium text-[#e6a033] mr-2 group-hover:text-white transition-colors duration-200 group-focus:text-white">Rabbit</span>
+
+                    <div className="relative">
+                      <img
+                        src="/images/img_vector_yellow_800_30x26.svg"
+                        alt="Puppy"
+                        className="w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] group-hover:opacity-0 group-focus:opacity-0 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+
+                      <img
+                        src="/images/img_vector_white_800_30x26.svg"
+                        alt="Puppy"
+                        className="absolute top-0 left-0 w-[30px] h-[24px] sm:w-[36px] sm:h-[30px] opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-200"
+                        aria-hidden="true"
+                      />
+                    </div>
                   </button>
 
                   {/* Other */}
@@ -193,6 +219,7 @@ const HomePage = () => {
                       console.log('Selected animal:', option?.label);
                     }}
                     style={{ width: "189px" }}
+                    // className="hover:!text-[red] transition-colors duration-200"
                     rightImage={{
                       src: "/images/img_vector_yellow_800_8x12.svg",
                       width: 12,
