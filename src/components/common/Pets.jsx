@@ -209,7 +209,7 @@ const Pets = () => {
           className="w-[12px] h-[12px] mr-1"
         />*/}
         <span className="text-[14px] font-inter font-medium text-[#e6a033] underline">
-          If you wnt to add another pet choose another.
+          If you wnt to add another pet, choose another.
         </span>
       </button>
     </div>

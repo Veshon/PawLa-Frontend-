@@ -408,7 +408,7 @@ const HomePage = () => {
                 style={{ backgroundImage: "url('/images/img_happy_woman_with_dog.png')" }}
               >
                 {/*purple box with the 3 functions*/}
-                <div className="!bg-[#752991] absolute right-[-100px] w-[158px] h-[600px] top-1/2 transform -translate-y-1/2 bg-button-1 rounded-[20px] p-8 mr-8">
+                <div className="!bg-[#752991] absolute right-[-100px] w-[148px] h-[600px] top-1/2 transform -translate-y-1/2 bg-button-1 rounded-[20px] p-10 mr-8">
                   <div className="flex flex-col items-center gap-16">
                     {/* Search Step */}
                     <div className="flex flex-col items-center ">
@@ -423,7 +423,7 @@ const HomePage = () => {
                     </div>
 
                     {/* Book & Pay Step */}
-                    <div className="bg-[#87CEEB] rounded-lg p-8 flex flex-col items-center">
+                    <div className="w-[148px] bg-[#87CEEB] p-8 flex flex-col items-center">
                       <div className="flex items-center mb-2">
                         <img
                           src="/images/img_playing_with_bu.svg"
